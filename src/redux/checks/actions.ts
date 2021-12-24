@@ -1,8 +1,8 @@
 import {ICheck} from "../../common/types";
-import {IAction, ITypeAction} from "../types";
+import {IAction} from "../types";
 import {FETCH_CHECKS, UPDATE_CHECKS} from "./action-types";
 
-export const fetchStart = (): ITypeAction => ({
+export const fetchStart = (): IAction<{ type: string }> => ({
   type: FETCH_CHECKS.START,
 });
 
@@ -16,7 +16,7 @@ export const fetchFailure = (error: Error): IAction<Error> => ({
   payload: error
 });
 
-export const updateStart = (): ITypeAction => ({
+export const updateStart = (): IAction<{}> => ({
   type: UPDATE_CHECKS.START,
 });
 

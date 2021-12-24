@@ -16,7 +16,7 @@ const initialState: IChecksState = {
   isUpdating: false,
 };
 
-export const checksState = (state: IChecksState = initialState, action: IAction<ICheck[] | Error>) => {
+export const checksState = (state: IChecksState = initialState, action: IAction<unknown>) => {
   switch (action.type) {
 
     case FETCH_CHECKS.START:
