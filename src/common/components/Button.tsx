@@ -1,8 +1,8 @@
 import React, {FC, ReactNode} from "react";
-import "../styles/button.css";
+import styles from "./Button.module.css";
 import classnames from "classnames";
 
-interface IProps {
+type IButtonProps = {
     children: ReactNode,
     classNames?: string,
     disabled?: boolean;
@@ -10,10 +10,10 @@ interface IProps {
     onClick?: () => void;
 }
 
-const Button: FC<IProps> = (props: IProps) => {
+const Button: FC<IButtonProps> = (props: IButtonProps) => {
     const { children, classNames = "", ...rest } = props;
     return (
-        <button className={classnames("check-button", classNames)} {...rest}>
+        <button className={classnames(styles.primaryButton, classNames)} {...rest}>
             {children}
         </button>
     )

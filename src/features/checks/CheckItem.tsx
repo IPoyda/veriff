@@ -1,21 +1,16 @@
 import React, {FC, useCallback} from 'react';
-import {IResultCheck} from "../common/types";
 import classNames from "classnames";
-import Button from "../components/Button";
-import "../styles/check-form.css";
+import Button from "../../common/components/Button";
+import styles from "./Checks.module.css";
+import {ListCheck} from "../../common/types";
 
-export interface IListCheck extends IResultCheck {
-    disabled: boolean;
-    active: boolean;
-}
-
-interface IProps {
+type ICheckItemProps = {
     index: number;
-    checkItem: IListCheck;
+    checkItem: ListCheck;
     onCheckAction: (isPositiveAnswer: boolean, position: number) => void;
 }
 
-export const CheckItem: FC<IProps> = (props: IProps) => {
+export const CheckItem: FC<ICheckItemProps> = (props: ICheckItemProps) => {
     const {checkItem, index, onCheckAction} = props;
     const {active, disabled, positive, description} = checkItem;
 
@@ -26,25 +21,25 @@ export const CheckItem: FC<IProps> = (props: IProps) => {
     return (
         <div
             className={classNames({
-                "check-item": true,
-                disabled: disabled,
-                active: active,
+                [styles.checkItem]: true,
+                [styles.disabled]: disabled,
+                [styles.active]: active,
             })}
         >
-            {disabled && <div className="opacity" />}
+            {disabled && <div className={styles.opacity} />}
             <label>{description}</label>
-            <div className="check-item-actions">
-                <div className="actions">
+            <div className={styles.checkItemActions}>
+                <div className={styles.actions}>
                     <Button
-                        classNames={classNames({ pressed: positive })}
+                        classNames={classNames({ [styles.pressed]: positive })}
                         disabled={disabled}
                         onClick={handleClick(true, index)}
                     >
                         {"Yes"}
                     </Button>
-                    <div className="actions-separator"/>
+                    <div className={styles.actionsSeparator}/>
                     <Button
-                        classNames={classNames({ pressed: positive === false })}
+                        classNames={classNames({ [styles.pressed]: positive === false })}
                         disabled={disabled}
                         onClick={handleClick(false, index)}
                     >

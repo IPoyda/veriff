@@ -1,4 +1,4 @@
-.check-button {
+.primaryButton {
     font-weight: 500;
     font-size: 14px;
     line-height: 40px;
@@ -15,24 +15,17 @@
     cursor: pointer;
 }
 
-.check-button:disabled {
+.primaryButton:disabled {
     background-color: #e6ebf4;
     color: #bdc0cf;
     cursor: not-allowed;
 }
 
-.check-button:enabled:hover,
-.check-button:enabled:focus {
+.primaryButton:enabled:hover,
+.primaryButton:enabled:focus {
     background-color: var(--highlight-color);
 }
 
-.check-button:enabled {
+.primaryButton:enabled {
     color: var(--primary-color);
-}
-
-.check-button.pressed,
-.check-button.pressed:enabled:hover,
-.check-button.pressed:enabled:focus{
-    background-color: var(--primary-color);
-    color: white;
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import {CheckItem, IListCheck} from "../../components/CheckItem";
+import {CheckItem} from "../../features/checks/CheckItem";
 import { Provider } from 'react-redux';
-import store from "../../redux/rootStore";
+import { store } from "../../app/store";
+import {ListCheck} from "../../common/types";
 
 describe("CheckItem", () => {
-    let checkItem : IListCheck;
+    let checkItem : ListCheck;
 
     beforeEach((done) => {
         checkItem = {
@@ -30,8 +31,8 @@ describe("CheckItem", () => {
                 />
             </Provider>
         );
-        const label = container?.querySelector('.check-item label')?.textContent;
-        const buttons = container?.querySelectorAll('.check-item button');
+        const label = container?.querySelector('label')?.textContent;
+        const buttons = container?.querySelectorAll('button');
         expect(label).toBe('Face on the picture matches face on the document');
         expect(buttons[0].textContent).toBe("Yes");
         expect(buttons[1].textContent).toBe("No");

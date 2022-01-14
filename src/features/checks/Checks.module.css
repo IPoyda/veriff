@@ -1,4 +1,4 @@
-.check-form-container {
+.checkFormContainer {
     display: flex;
     flex-direction: column;
     max-width: 350px;
@@ -6,60 +6,67 @@
     justify-content: space-between;
 }
 
-.check-item:first-child, .check-item:last-child {
+.checkItem:first-child, .checkItem:last-child {
     margin: 0;
 }
 
-.check-item {
+.checkItem {
     margin: 15px 0;
     padding: 5px 10px;
     position: relative;
 }
 
-.check-item.disabled:hover, .check-item.disabled:focus {
+.checkItem.disabled:hover, .checkItem.disabled:focus {
     background-color: initial;
 }
 
-.check-item.active, .check-item.active:hover, .check-item.active:focus {
+.checkItem.active, .checkItem.active:hover, .checkItem.active:focus {
     background-color: var(--highlight-color);
 }
 
-.check-item:hover, .check-item:focus {
+.checkItem:hover, .checkItem:focus {
     background-color: #e6ebf4;
 }
 
-.check-item-actions .actions {
+.checkItemActions .actions {
     display: inline-flex;
     border: 1px solid var(--primary-color);
     border-radius: 6px;
     margin-top: 10px;
 }
 
-.check-item-actions .actions-separator {
+.checkItemActions .actionsSeparator {
     border-left: 1px solid var(--primary-color);
 }
 
-.check-item-actions button:first-child {
+.checkItemActions button:first-child {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
 
-.check-item-actions button:last-child {
+.checkItemActions button:last-child {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
 
-.form-actions {
+.formActions {
     margin-top: 30px;
     display: flex;
     justify-content: flex-end;
 }
 
-.form-actions button {
+.formActions button {
     text-transform: uppercase;
 }
 
-.check-form-container .opacity {
+.checkFormContainer button.pressed,
+.checkFormContainer button.pressed:enabled:hover,
+.checkFormContainer button.pressed:enabled:focus{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.checkFormContainer .opacity {
     background: white;
     opacity: 0.5;
     width: 100%;
